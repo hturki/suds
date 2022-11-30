@@ -1,0 +1,2 @@
+frame_ranges: [100, 200]
+test_every: 4

@@ -1,0 +1,3 @@
+kitti_sequence: '0001'
+frame_ranges: [380, 431]
+test_every: 4
