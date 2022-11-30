@@ -1,0 +1,105 @@
+body {
+  font-family: 'Lato', 'Source Sans Pro', 'Verdana', 'Helvetica', sans-serif;
+  background-color: #f2f2f2;
+  font-size: 15px;
+}
+
+.content {
+  font-family: 'Lato', 'Source Sans Pro', 'Verdana', 'Helvetica', sans-serif;
+  width: 1000px;
+  padding: 25px 25px;
+  margin: 25px auto;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.content-title {
+  font-family: 'Lato', 'Source Sans Pro', 'Verdana', 'Helvetica', sans-serif;
+  background-color: inherit;
+  margin-top: 5px;
+  padding-top: 5px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+a, a:visited {
+  font-family: 'Lato', 'Source Sans Pro', 'Verdana', 'Helvetica', sans-serif;
+  text-decoration: none;
+  color: #0F4D92;
+}
+
+.anchor {
+  color: inherit;
+}
+
+#authors {
+  font-family: 'Lato', 'Source Sans Pro', 'Verdana', 'Helvetica', sans-serif;
+  text-align: center;
+}
+
+#conference {
+  font-family: 'Lato', 'Source Sans Pro', 'Verdana', 'Helvetica', sans-serif;
+  text-align: center;
+  font-style: italic;
+}
+
+#authors a {
+  font-family: 'Lato', 'Source Sans Pro', 'Verdana', 'Helvetica', sans-serif;
+  font-weight: normal;
+}
+
+#authors span {
+  font-family: 'Lato', 'Source Sans Pro', 'Verdana', 'Helvetica', sans-serif;
+  font-weight: normal;
+  margin: 0 10px;
+}
+
+#menu {
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Lato', 'Source Sans Pro', 'Verdana', 'Helvetica', sans-serif;
+  font-size: 35px;
+}
+
+h2 {
+  font-family: 'Lato', 'Source Sans Pro', 'Verdana', 'Helvetica', sans-serif;
+  font-size: 25px;
+  padding: 0;
+  margin: 10px;
+}
+
+h3 {
+  font-family: 'Lato', 'Source Sans Pro', 'Verdana', 'Helvetica', sans-serif;
+  font-size: 20px;
+  padding: 0;
+  margin: 10px;
+}
+
+p {
+  line-height: 130%;
+  margin: 10px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+.samples {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.cond {
+  float: left;
+  margin: 0 40px;
+}
+
+.cond-container {
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}

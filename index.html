@@ -1,0 +1,172 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="StyleSheet" href="css/projects.css" type="text/css" media="all">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <title>SUDS: Scalable Urban Dynamic Scenes</title>
+    <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/
+        if you update and want to force Facebook to re-scrape. -->
+    <meta property="og:image" content="./resources/trailer.gif"/>
+    <meta property="og:title" content="SUDS: Scalable Urban Dynamic Scenes"/>
+    <meta property="og:description"
+          content="We extend neural radiance fields (NeRFs) to dynamic large-scale urban scenes. Prior work tends to reconstruct single video clips of short durations (up to 10 seconds). Two reasons are that such methods (a) tend to scale linearly with the number of moving objects and input videos because a separate model is built for each and (b) tend to require supervision via 3D bounding boxes and panoptic labels, obtained manually or via category-specific models. As a step towards truly open-world reconstructions of dynamic cities, we introduce two key innovations: (a) we factorize the scene into three separate hash table data structures to efficiently encode static, dynamic, and far-field radiance fields, and (b) we make use of unlabeled target signals consisting of RGB images, sparse LiDAR, off-the-shelf self-supervised 2D descriptors, and most importantly, 2D optical flow. Operationalizing such inputs via photometric, geometric, and feature-metric reconstruction losses enables SUDS to decompose dynamic scenes into the static background, individual objects, and their motions. When combined with our multi-branch table representation, such reconstructions can be scaled to tens of thousands of objects across 1.2 million frames from 1700 videos spanning geospatial footprints of hundreds of kilometers, (to our knowledge) the largest dynamic NeRF built to date. We present qualitative initial results on a variety of tasks enabled by our representations, including novel-view synthesis of dynamic urban scenes, unsupervised 3D instance segmentation, and unsupervised 3D cuboid detection. To compare to prior work, we also evaluate on KITTI and Virtual KITTI 2, surpassing state-of-the-art methods that rely on ground truth 3D bounding box annotations while being 10x quicker to train."/>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YG05XP66X6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-YG05XP66X6');
+    </script>
+</head>
+
+<body>
+
+  <div class="content content-title" style="text-align: center">
+    <h1>SUDS: Scalable Urban Dynamic Scenes</h1>
+    <h3 id="conference">CVPR 2023</h3>
+
+    <div id="authors">
+        <h3>
+            <span><a href="https://haithemturki.com">Haithem Turki</a><sup>1</sup></span>
+            <span><a href="https://jasonyzhang.com/">Jason Y. Zhang</a><sup>1</sup></span>
+            <span><a href="https://www.francescoferroni.com/">Francesco Ferroni</a><sup>2</sup></span>
+            <span><a href="http://www.cs.cmu.edu/~deva">Deva Ramanan</a><sup>1</sup></span>
+        </h3>
+
+        <h3>
+        <span><sup>1&nbsp;</sup>Carnegie Mellon University</span>
+        <span><sup>2&nbsp;</sup>Argo AI</span>
+        <h3>
+    </div>
+
+    <h3 id="menu"><a href='paper.pdf'>Paper</a></h3>
+    <h3><a href='https://github.com/hturki/suds'>Code</a></h3>
+    <h3><a href='additional-results.html'>Additional Results</a></h3>
+
+  </div>
+
+  <div class="content">
+    <img src="resources/clusters.jpg" style="width: 80%; margin: auto; display: block; padding-bottom: 20px">
+    <div style="text-align: center; padding-bottom:20px">
+        <h3>Abstract</h3>
+    </div>
+    <figure style="font-style: italic; font-weight: normal; margin: 0px; padding: 0px; border: 0px; text-align:center">
+      <figcaption>
+       We extend neural radiance fields (NeRFs) to dynamic large-scale urban scenes. Prior work tends to reconstruct single video clips of short durations (up to 10 seconds). Two reasons are that such methods (a) tend to scale linearly with the number of moving objects and input videos because a separate model is built for each and (b) tend to require supervision via 3D bounding boxes and panoptic labels, obtained manually or via category-specific models. As a step towards truly open-world reconstructions of dynamic cities, we introduce two key innovations: (a) we factorize the scene into three separate hash table data structures to efficiently encode static, dynamic, and far-field radiance fields, and (b) we make use of unlabeled target signals consisting of RGB images, sparse LiDAR, off-the-shelf self-supervised 2D descriptors, and most importantly, 2D optical flow.
+
+       Operationalizing such inputs via photometric, geometric, and feature-metric reconstruction losses enables SUDS to decompose dynamic scenes into the static background, individual objects, and their motions. When combined with our multi-branch table representation, such reconstructions can be scaled to tens of thousands of objects across 1.2 million frames from 1700 videos spanning geospatial footprints of hundreds of kilometers, (to our knowledge) the largest dynamic NeRF built to date.
+
+       We present qualitative initial results on a variety of tasks enabled by our representations, including novel-view synthesis of dynamic urban scenes, unsupervised 3D instance segmentation, and unsupervised 3D cuboid detection. To compare to prior work, we also evaluate on KITTI and Virtual KITTI 2, surpassing state-of-the-art methods that rely on ground truth 3D bounding box annotations while being 10x quicker to train.
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="content">
+    <div style="text-align: center; padding-bottom:20px">
+        <h3>Overview</h3>
+    </div>
+    <figure style="font-style: italic; font-weight: normal; margin: 0px; padding: 0px; border: 0px">
+        <video width="100%" controls style="padding-bottom: 20px">
+            <source src="./vids/overview.mp4" type="video/mp4">
+        </video>
+    </figure>
+  </div>
+
+  <div class="content">
+    <div style="text-align: center">
+        <h3>Drive-Throughs</h3>
+    </div>
+    <figure style="font-style: italic; font-weight: normal">
+        <figcaption>
+            We visualize dynamic objects across multiple days (below) on the same city block. All renderings are generated from the same trained model.
+        </figcaption>
+    </figure>
+    <table width=100% style="text-align: center; padding-left: 40px; padding-right: 40px">
+        <tr>
+            <td width="33%">RGB</td>
+            <td width="33%">Depth</td>
+            <td width="33%">Semantics</td>
+        </tr>
+    </table>
+    <figure style="font-style: italic; font-weight: normal">
+        <video width="100%" controls style="padding-bottom: 20px">
+            <source src="./vids/day1.mp4" type="video/mp4" preload="none">
+        </video>
+    </figure>
+    <figure style="font-style: italic; font-weight: normal">
+        <video width="100%" controls style="padding-bottom: 20px">
+            <source src="./vids/day2.mp4" type="video/mp4" preload="none">
+        </video>
+    </figure>
+    <figure style="font-style: italic; font-weight: normal">
+        <video width="100%" controls style="padding-bottom: 20px">
+            <source src="./vids/day3.mp4" type="video/mp4" preload="none">
+        </video>
+    </figure>
+  </div>
+</html>
+
+<div class="content">
+    <div style="text-align: center">
+        <h3>Re-simulation</h3>
+    </div>
+    <figure style="font-style: italic; font-weight: normal;">
+        <figcaption>
+            We render various scenarios to illustrate potential “resimulation” workflows that SUDS enables. A long standing goal for (re)-simulation-for-robotics is the ability to regenerate sensor data that corresponds to different actions taken by the robot (in our case, a vehicle that moves in a different manner than it did during the original sensor recording) <cite><a href="https://ieeexplore.ieee.org/document/9294368">[1]</a></cite>. Such workflows are also used for closed-loop resimulation for model-based reinforcement learning <cite><a href="https://ieeexplore.ieee.org/document/10007800">[2]</a></cite>. 
+        </figcaption>
+    </figure>
+    <table width=100% style="text-align: center; padding-left: 40px; padding-right: 40px">
+        <tr>
+            <td width="33%">RGB</td>
+            <td width="33%">Depth</td>
+            <td width="33%">Semantics</td>
+        </tr>
+    </table>
+    <figure style="font-style: italic; font-weight: normal">
+        <div style="display: flex; margin-right: 40px">
+            <div>
+            <div style="writing-mode: vertical-rl; transform:scale(-1); text-align: center; height: 232px; margin-right: 20px; font-style: normal;">Original</div>
+            <div style="writing-mode: vertical-rl; transform:scale(-1); text-align: center; height: 232px; margin-right: 20px; font-style: normal">Modified</div>
+            </div>
+            <video width="100%" controls style="padding-bottom: 20px">
+                <source src="./vids/static.mp4" type="video/mp4" preload="none">
+            </video>
+        </div>
+        <figcaption>
+            We remove all dynamic objects from the scene.
+        </figcaption>
+    </figure>
+    <figure style="font-style: italic; font-weight: normal">
+        <div style="display: flex; margin-right: 40px">
+            <div>
+            <div style="writing-mode: vertical-rl; transform:scale(-1); text-align: center; height: 222px; margin-right: 20px; font-style: normal;">Original</div>
+            <div style="writing-mode: vertical-rl; transform:scale(-1); text-align: center; height: 222px; margin-right: 20px; font-style: normal">Modified</div>
+            </div>
+            <video width="100%" controls style="padding-bottom: 20px">
+            <source src="./vids/shifted.mp4" type="video/mp4" preload="none">
+            </video>
+        </div>
+        <figcaption>
+            We shift the ego-vehicle's trajectory by four meters.
+        </figcaption>
+    </figure>
+    <figure style="font-style: italic; font-weight: normal">
+        <div style="display: flex; margin-right: 40px">
+            <div>
+            <div style="writing-mode: vertical-rl; transform:scale(-1); text-align: center; height: 222px; margin-right: 20px; font-style: normal;">Original</div>
+            <div style="writing-mode: vertical-rl; transform:scale(-1); text-align: center; height: 222px; margin-right: 20px; font-style: normal">Modified</div>
+            </div>
+            <video width="100%" controls style="padding-bottom: 20px">
+            <source src="./vids/intrinsics.mp4" type="video/mp4" preload="none">
+            </video>
+        </div>
+        <figcaption>
+            We shorten the camera focal length to mimic that of fisheye cameras used for near-field detection on autonomous vehicles, propagating the rendered depth and semantic annotations.
+        </figcaption>
+    </figure>
+  </div>
+</html>
+
