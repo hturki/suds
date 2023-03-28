@@ -7,7 +7,18 @@
 
 This repository contains the code needed to train [SUDS](https://haithemturki.com/suds/) models.
 
+## Citation
 
+```
+@misc{turki2023suds,
+   title={SUDS: Scalable Urban Dynamic Scenes},
+   author={Haithem Turki and Jason Y. Zhang and Francesco Ferroni and Deva Ramanan},
+   year={2023},
+   eprint={2303.14536},
+   archivePrefix={arXiv},
+   primaryClass={cs.CV}
+}
+```
 
 ## Setup
 
