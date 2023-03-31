@@ -274,7 +274,6 @@ dependencies:
       - sniffio==1.3.0
       - soupsieve==2.4
       - stack-data==0.6.2
-      - suds-cuda==0.0.0
       - tenacity==8.2.2
       - tensorboard==2.9.0
       - tensorboard-data-server==0.6.1
